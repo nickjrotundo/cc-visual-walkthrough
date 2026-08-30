@@ -1,0 +1,11 @@
+{
+  "name": "ccwalk",
+  "displayName": "CC Visual Walkthrough",
+  "description": "Records and captures spec-driven browser tours of your web app into shareable HTML reports (screenshots, per-group video, non-fatal regression assertions). Claude Code generates and maintains the tour spec.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Nick Rotundo"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/nickjrotundo/cc-visual-walkthrough"
+}

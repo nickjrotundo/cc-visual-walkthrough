@@ -1,0 +1,69 @@
+[project]
+name = "cc-visual-walkthrough"
+version = "0.2.0"
+description = "Spec-driven Playwright walkthroughs for Claude Code: records and captures browser tours of your web app into shareable HTML reports with screenshots, video, and non-fatal regression assertions."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Nick Rotundo" }]
+keywords = ["playwright", "walkthrough", "visual-testing", "claude-code", "screenshots", "demo"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "playwright>=1.40",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+demo = ["fastapi>=0.110", "uvicorn>=0.27", "python-multipart>=0.0.9"]
+
+[project.scripts]
+ccwalk = "cc_visual_walkthrough.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/nickjrotundo/cc-visual-walkthrough"
+Repository = "https://github.com/nickjrotundo/cc-visual-walkthrough"
+Issues = "https://github.com/nickjrotundo/cc-visual-walkthrough/issues"
+Changelog = "https://github.com/nickjrotundo/cc-visual-walkthrough/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "fastapi>=0.110",
+    "uvicorn>=0.27",
+    "python-multipart>=0.0.9",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cc_visual_walkthrough"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "examples/",
+    ".github/",
+    "uv.lock",
+    ".work/",
+    ".ccwalk/",
+    "ANALYSIS.md",
+    "BUILD-LOG.md",
+    "DESIGN.md",
+    "docs/",
+    "skills/",
+    ".claude-plugin/",
+    "dist/",
+    "reports/",
+    "/ccwalk.yaml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

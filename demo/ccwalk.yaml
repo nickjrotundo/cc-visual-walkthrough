@@ -1,0 +1,29 @@
+# ccwalk config for the bundled demo app. Run from the repo root:
+#   CCWALK_DEMO_USER=demo CCWALK_DEMO_PASS=demo123 \
+#     uv run ccwalk run --config demo/ccwalk.yaml --start-app
+version: 1
+app:
+  name: "ccwalk demo"
+  base_url: "http://localhost:8123"
+  start_command: "uv run uvicorn demo.app:app --port 8123"  # run from repo root
+  ready_check: { path: "/health", timeout_s: 45 }
+auth:
+  method: form
+  auto_login: true
+  form:
+    login_path: "/login"
+    username_selector: "[data-testid=login-user]"
+    password_selector: "[data-testid=login-pass]"
+    submit_selector: "[data-testid=login-submit]"
+    success_selector: "[data-testid=app-title]"
+    username_env: CCWALK_DEMO_USER
+    password_env: CCWALK_DEMO_PASS
+capture:
+  video: true
+  default_viewport: { width: 1280, height: 800 }
+report:
+  out_dir: "../reports/walkthrough"
+  keep_runs: 5
+specs_dir: "."  # relative to this config file
+default_spec: "tour"
+custom_actions: "custom_actions.py"

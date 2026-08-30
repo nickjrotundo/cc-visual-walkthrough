@@ -1,0 +1,169 @@
+{
+  "timestamp": "20260829-220605",
+  "git_head": "8d50e1b",
+  "base_url": "http://localhost:8123",
+  "app_health": {
+    "reachable": true,
+    "status": 200
+  },
+  "app_name": "ccwalk demo",
+  "tool_version": "0.1.0",
+  "spec": "demo/tour.py",
+  "results": [
+    {
+      "name": "login_page",
+      "group": "login",
+      "description": "The sign-in page as an anonymous visitor sees it",
+      "notes": "",
+      "capture": "screenshot",
+      "viewport": null,
+      "status": "pass",
+      "duration_ms": 145.68035607226193,
+      "screenshots": [
+        "screenshots/001_login_page_final.png"
+      ],
+      "video_path": null,
+      "error": null,
+      "assertions": [
+        {
+          "description": "login title visible",
+          "passed": true,
+          "detail": "visible"
+        },
+        {
+          "description": "submit button visible",
+          "passed": true,
+          "detail": "visible"
+        }
+      ]
+    },
+    {
+      "name": "login_submit",
+      "group": "login",
+      "description": "Filling credentials and signing in lands on the notes list",
+      "notes": "",
+      "capture": "screenshot",
+      "viewport": null,
+      "status": "pass",
+      "duration_ms": 197.73082993924618,
+      "screenshots": [
+        "screenshots/002_login_submit_final.png"
+      ],
+      "video_path": "videos/login.webm",
+      "error": null,
+      "assertions": [
+        {
+          "description": "notes page reached",
+          "passed": true,
+          "detail": "visible"
+        },
+        {
+          "description": "empty state shown before any notes exist",
+          "passed": true,
+          "detail": "visible"
+        }
+      ]
+    },
+    {
+      "name": "add_notes",
+      "group": "notes",
+      "description": "Adding two notes over htmx updates the list without a page reload",
+      "notes": "",
+      "capture": "screenshot",
+      "viewport": null,
+      "status": "pass",
+      "duration_ms": 527.8201729524881,
+      "screenshots": [
+        "screenshots/003_add_notes_final.png"
+      ],
+      "video_path": null,
+      "error": null,
+      "assertions": [
+        {
+          "description": "two notes listed",
+          "passed": true,
+          "detail": "found 2, expected >= 2"
+        },
+        {
+          "description": "first note text correct",
+          "passed": true,
+          "detail": "text_contains 'Q3 report' in 'Ship the Q3 report'"
+        }
+      ]
+    },
+    {
+      "name": "delete_note",
+      "group": "notes",
+      "description": "Deleting the second note removes it from the list",
+      "notes": "note-2 absence is implied by the final screenshot; presence-of-absence assertions are deliberately out of scope for v0.1.",
+      "capture": "screenshot",
+      "viewport": null,
+      "status": "pass",
+      "duration_ms": 452.80517102219164,
+      "screenshots": [
+        "screenshots/004_delete_note_final.png"
+      ],
+      "video_path": "videos/notes.webm",
+      "error": null,
+      "assertions": [
+        {
+          "description": "first note still present",
+          "passed": true,
+          "detail": "visible"
+        }
+      ]
+    },
+    {
+      "name": "analyze_note",
+      "group": "analysis",
+      "description": "The Analyze action runs ~4s server-side; the tour captures the in-progress state and the final result",
+      "notes": "",
+      "capture": "screenshot",
+      "viewport": null,
+      "status": "pass",
+      "duration_ms": 5150.737180956639,
+      "screenshots": [
+        "screenshots/005_analyze_note_wait_0.png",
+        "screenshots/006_analyze_note_wait_1.png",
+        "screenshots/007_analyze_note_wait_2.png",
+        "screenshots/008_analyze_note_wait_3.png",
+        "screenshots/009_analyze_note_wait_4.png",
+        "screenshots/010_analyze_note_final.png"
+      ],
+      "video_path": "videos/analysis.webm",
+      "error": null,
+      "assertions": [
+        {
+          "description": "analysis result rendered",
+          "passed": true,
+          "detail": "text_contains 'words' in 'Analysis: 4 words, sentiment: positive, 0 issues found'"
+        }
+      ]
+    },
+    {
+      "name": "mobile_notes",
+      "group": "mobile",
+      "description": "The notes list on a phone-sized viewport",
+      "notes": "",
+      "capture": "screenshot",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "pass",
+      "duration_ms": 377.71520600654185,
+      "screenshots": [
+        "screenshots/011_mobile_notes_final.png"
+      ],
+      "video_path": "videos/mobile.webm",
+      "error": null,
+      "assertions": [
+        {
+          "description": "note form usable on mobile",
+          "passed": true,
+          "detail": "visible"
+        }
+      ]
+    }
+  ]
+}

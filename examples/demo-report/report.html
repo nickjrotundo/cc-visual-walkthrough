@@ -1,0 +1,116 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>ccwalk demo Visual Walkthrough — 20260829-220605</title>
+<style>
+  :root { color-scheme: dark; }
+  body { background:#0b0e14; color:#e6e6e6; font-family: -apple-system, Segoe UI, sans-serif;
+          max-width: 1100px; margin: 0 auto; padding: 24px; line-height:1.5; }
+  h1 { margin-bottom: 4px; }
+  header.meta { background:#151a24; border:1px solid #262b38; border-radius:10px;
+                 padding:16px 20px; margin-bottom: 24px; font-size:0.9em; }
+  header.meta div { margin: 2px 0; }
+  .summary-badges span { margin-right: 10px; }
+  section.step { border-top: 1px solid #262b38; padding: 20px 0; }
+  section.step h2 { font-size:1.15em; }
+  .shots { display:flex; flex-wrap:wrap; gap:6px; }
+  img { background:#000; }
+  a { color: #7aa2f7; }
+  code { background:#151a24; padding:1px 5px; border-radius:4px; }
+</style>
+</head>
+<body>
+<h1>ccwalk demo Visual Walkthrough</h1>
+<header class="meta">
+  <div><strong>Generated:</strong> 20260829-220605</div>
+  <div><strong>Git HEAD:</strong> <code>8d50e1b</code></div>
+  <div><strong>App:</strong> http://localhost:8123 (reachable)</div>
+  <div><strong>Spec:</strong> demo/tour.py</div>
+  <div><strong>Tool:</strong> cc-visual-walkthrough 0.1.0</div>
+  <div class="summary-badges" style="margin-top:8px;">
+    6 steps —
+    <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span> 6
+    <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#f39c12;color:#0b0e14;font-weight:600;font-size:0.8em;">WARN</span> 0
+    <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#e74c3c;color:#0b0e14;font-weight:600;font-size:0.8em;">FAIL</span> 0
+    
+  </div>
+</header>
+
+        <section class="step" id="step-1">
+          <h2>1. login_page <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: login · 146ms
+            </span>
+          </h2>
+          <p>The sign-in page as an anonymous visitor sees it</p>
+          
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — login title visible <span style="opacity:0.6;">(visible)</span></li><li style="color:#2ecc71;">PASS — submit button visible <span style="opacity:0.6;">(visible)</span></li></ul>
+          <div class="shots"><a href="screenshots/001_login_page_final.png" target="_blank"><img src="screenshots/001_login_page_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          
+        </section>
+        <section class="step" id="step-2">
+          <h2>2. login_submit <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: login · 198ms
+            </span>
+          </h2>
+          <p>Filling credentials and signing in lands on the notes list</p>
+          
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — notes page reached <span style="opacity:0.6;">(visible)</span></li><li style="color:#2ecc71;">PASS — empty state shown before any notes exist <span style="opacity:0.6;">(visible)</span></li></ul>
+          <div class="shots"><a href="screenshots/002_login_submit_final.png" target="_blank"><img src="screenshots/002_login_submit_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          <video controls preload="metadata" poster="screenshots/002_login_submit_final.png" style="max-width:480px;margin-top:8px;border-radius:6px;border:1px solid #333;"><source src="videos/login.webm" type="video/webm"></video>
+        </section>
+        <section class="step" id="step-3">
+          <h2>3. add_notes <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: notes · 528ms
+            </span>
+          </h2>
+          <p>Adding two notes over htmx updates the list without a page reload</p>
+          
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — two notes listed <span style="opacity:0.6;">(found 2, expected &gt;= 2)</span></li><li style="color:#2ecc71;">PASS — first note text correct <span style="opacity:0.6;">(text_contains &#x27;Q3 report&#x27; in &#x27;Ship the Q3 report&#x27;)</span></li></ul>
+          <div class="shots"><a href="screenshots/003_add_notes_final.png" target="_blank"><img src="screenshots/003_add_notes_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          
+        </section>
+        <section class="step" id="step-4">
+          <h2>4. delete_note <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: notes · 453ms
+            </span>
+          </h2>
+          <p>Deleting the second note removes it from the list</p>
+          <div style="border-left:3px solid #f39c12;background:#151a24;padding:8px 12px;margin:8px 0;border-radius:0 6px 6px 0;"><strong style="color:#f39c12;">Note</strong> note-2 absence is implied by the final screenshot; presence-of-absence assertions are deliberately out of scope for v0.1.</div>
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — first note still present <span style="opacity:0.6;">(visible)</span></li></ul>
+          <div class="shots"><a href="screenshots/004_delete_note_final.png" target="_blank"><img src="screenshots/004_delete_note_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          <video controls preload="metadata" poster="screenshots/004_delete_note_final.png" style="max-width:480px;margin-top:8px;border-radius:6px;border:1px solid #333;"><source src="videos/notes.webm" type="video/webm"></video>
+        </section>
+        <section class="step" id="step-5">
+          <h2>5. analyze_note <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: analysis · 5151ms
+            </span>
+          </h2>
+          <p>The Analyze action runs ~4s server-side; the tour captures the in-progress state and the final result</p>
+          
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — analysis result rendered <span style="opacity:0.6;">(text_contains &#x27;words&#x27; in &#x27;Analysis: 4 words, sentiment: positive, 0 issues found&#x27;)</span></li></ul>
+          <div class="shots"><a href="screenshots/005_analyze_note_wait_0.png" target="_blank"><img src="screenshots/005_analyze_note_wait_0.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a><a href="screenshots/006_analyze_note_wait_1.png" target="_blank"><img src="screenshots/006_analyze_note_wait_1.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a><a href="screenshots/007_analyze_note_wait_2.png" target="_blank"><img src="screenshots/007_analyze_note_wait_2.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a><a href="screenshots/008_analyze_note_wait_3.png" target="_blank"><img src="screenshots/008_analyze_note_wait_3.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a><a href="screenshots/009_analyze_note_wait_4.png" target="_blank"><img src="screenshots/009_analyze_note_wait_4.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a><a href="screenshots/010_analyze_note_final.png" target="_blank"><img src="screenshots/010_analyze_note_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          <video controls preload="metadata" poster="screenshots/010_analyze_note_final.png" style="max-width:480px;margin-top:8px;border-radius:6px;border:1px solid #333;"><source src="videos/analysis.webm" type="video/webm"></video>
+        </section>
+        <section class="step" id="step-6">
+          <h2>6. mobile_notes <span style="display:inline-block;padding:2px 10px;border-radius:10px;background:#2ecc71;color:#0b0e14;font-weight:600;font-size:0.8em;">PASS</span>
+            <span style="font-weight:400;font-size:0.7em;opacity:0.6;">
+              group: mobile · 378ms
+            </span>
+          </h2>
+          <p>The notes list on a phone-sized viewport</p>
+          
+          
+          <ul style="margin:6px 0;"><li style="color:#2ecc71;">PASS — note form usable on mobile <span style="opacity:0.6;">(visible)</span></li></ul>
+          <div class="shots"><a href="screenshots/011_mobile_notes_final.png" target="_blank"><img src="screenshots/011_mobile_notes_final.png" loading="lazy" style="max-width:420px;border:1px solid #333;border-radius:6px;margin:4px;"></a></div>
+          <video controls preload="metadata" poster="screenshots/011_mobile_notes_final.png" style="max-width:480px;margin-top:8px;border-radius:6px;border:1px solid #333;"><source src="videos/mobile.webm" type="video/webm"></video>
+        </section>
+</body></html>

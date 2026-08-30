@@ -1,0 +1,8 @@
+.work/
+__pycache__/
+*.pyc
+.venv/
+reports/
+dist/
+.pytest_cache/
+.ruff_cache/

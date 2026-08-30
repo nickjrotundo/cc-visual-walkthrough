@@ -1,0 +1,12 @@
+{
+  "name": "cc-visual-walkthrough",
+  "owner": { "name": "Nick Rotundo" },
+  "description": "CC Visual Walkthrough - records spec-driven browser tours of your web app into shareable HTML reports. Claude Code generates and maintains the tour spec.",
+  "plugins": [
+    {
+      "name": "ccwalk",
+      "source": ".",
+      "description": "Records spec-driven browser tours of your web app into shareable HTML reports (screenshots, per-group video, non-fatal regression assertions). Claude Code generates and maintains the tour spec."
+    }
+  ]
+}

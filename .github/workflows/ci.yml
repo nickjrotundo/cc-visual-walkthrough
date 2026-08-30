@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: uv sync
+      - run: uv run pytest -q
+
+  demo-tour:
+    runs-on: ubuntu-latest
+    needs: tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: uv run playwright install --with-deps chromium
+      - name: Run the walkthrough against the bundled demo app
+        env:
+          CCWALK_DEMO_USER: demo
+          CCWALK_DEMO_PASS: demo123
+        run: uv run ccwalk run --config demo/ccwalk.yaml --start-app --out-dir tour-report
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: walkthrough-report
+          path: tour-report/
