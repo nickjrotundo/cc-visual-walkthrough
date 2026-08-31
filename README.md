@@ -166,3 +166,9 @@ example of the output lives in [`examples/`](https://github.com/nickjrotundo/cc-
 ## Support
 
 Questions and bugs: [GitHub Issues](https://github.com/nickjrotundo/cc-visual-walkthrough/issues).
+
+Example prompts once the plugin is installed:
+
+1. `/ccwalk:setup` - inventory this app, generate a tour spec, and run it
+2. "run the walkthrough and triage anything that fails" (`/ccwalk:run`)
+3. `/ccwalk:serve` - start the reports server and give me the link
