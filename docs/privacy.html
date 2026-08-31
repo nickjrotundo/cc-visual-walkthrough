@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ccwalk - Privacy Policy</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto;
+         padding: 0 1rem; color: #222; background: #fff; line-height: 1.55; }
+  h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 1.6em; }
+  code { background: #f2f2f2; padding: 0.1em 0.3em; border-radius: 3px; }
+  a { color: #0b5fff; }
+  .meta { color: #666; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<h1>ccwalk (CC Visual Walkthrough) - Privacy Policy</h1>
+<p class="meta">Effective 2026-08-31. Applies to the ccwalk Claude Code
+plugin and the cc-visual-walkthrough Python package.</p>
+
+<h2>The short version</h2>
+<p>ccwalk runs entirely on your machine and only talks to the web app
+you point it at. It has no telemetry, no analytics, no accounts, and it
+never sends anything to the developer.</p>
+
+<h2>What it captures</h2>
+<p>During a tour, ccwalk drives a browser through your own application
+and records what that application renders: screenshots, short videos,
+and text read from the page for assertions. Whatever your app displays
+during the tour (including any test data) ends up in the report. Reports
+are written locally under your project's <code>reports/</code> directory
+and are yours to keep, share, or delete.</p>
+
+<h2>Credentials</h2>
+<p>Login credentials for tours are read from environment variables whose
+names you put in the config; the values live in your gitignored
+<code>.env</code>. Credentials and tokens are not written into reports
+or run metadata. The documentation recommends using a throwaway test
+account. When header-based auth is configured, the token is sent only to
+the origin of the app under test, never to third-party hosts the page
+loads.</p>
+
+<h2>Network access</h2>
+<ul>
+  <li>The tour itself talks only to the app URL you configure.</li>
+  <li><code>ccwalk install-browsers</code> downloads a browser from
+      Playwright's official distribution servers - the one expected
+      third-party download.</li>
+  <li><code>ccwalk serve</code> binds 127.0.0.1 by default. Binding
+      other interfaces, or publishing a report anywhere (for example
+      this repository publishes its own demo report to GitHub Pages),
+      is your action - remember reports contain screenshots of your
+      app.</li>
+</ul>
+
+<h2>What the developer receives</h2>
+<p>Nothing. There is no phone-home of any kind. If you file a GitHub
+issue, that is governed by GitHub's terms, not this policy.</p>
+
+<h2>Changes and contact</h2>
+<p>Changes to this policy are published at this URL with a new effective
+date. Questions:
+<a href="https://github.com/nickjrotundo/cc-visual-walkthrough/issues">GitHub Issues</a>.</p>
+</body>
+</html>

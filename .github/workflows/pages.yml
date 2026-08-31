@@ -31,6 +31,8 @@ jobs:
         run: uv run ccwalk run --config demo/ccwalk.yaml --start-app --out-dir site
       - name: Add index redirect
         run: cp site/report.html site/index.html
+      - name: Add privacy policy
+        run: cp docs/privacy.html site/privacy.html
       - uses: actions/configure-pages@v5
         with:
           enablement: true
